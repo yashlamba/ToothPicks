@@ -1,10 +1,10 @@
 # ToothPicks
 Implementing famous toothpick pattern using python and tkinter
 
-# About the Pattern
+## About the Pattern
 This is an amazing video by Numberphile on the same: https://www.youtube.com/watch?v=_UtCli1SgjI
 
-# To Run the Program
+## To Run the Program
 Clone the repository: `git clone https://github.com/yashlamba/ToothPicks.git`
 
 Change Directory: `cd ToothPicks`
