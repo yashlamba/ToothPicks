@@ -11,19 +11,19 @@ class mainMenu:
     
     def __init__(self, master):
         self.master = master
-        self.master.geometry('600x600')
+        self.master.geometry('800x600')
         self.frame = tk.Frame(self.master)
         self.frame.pack()
         self.prevGeneration = 0
         self.drawPicksCanvas = tk.Canvas(self.frame, width = 600, height = 600)
-        self.drawPicksCanvas.grid(rowspan = 3, columnspan = 3)
+        self.drawPicksCanvas.grid(rowspan = 3, column = 0)
         self.spinBoxValue = tk.IntVar()
         self.spinBoxValue.set(0)
-        self.spinBox = ttk.Spinbox(self.frame, from_ = 1, to = 10000, textvariable = self.spinBoxValue, command = self.updatePicks)
-        self.spinBox.grid(row = 2, column = 2, sticky = 's') 
-        self.scaleBar = tk.Scale(self.frame, from_ = 100, to = 1, orient = 'horizontal', command = lambda x: self.scale(self.scaleBar.get()*0.01), length = 300)
+        self.spinBox = ttk.Spinbox(self.frame, from_ = 1, to = 10000, textvariable = self.spinBoxValue, command = self.updatePicks, state = 'readonly', width = 4)
+        self.spinBox.grid(row = 1, column = 1, sticky = 'n') 
+        self.scaleBar = tk.Scale(self.frame, from_ = 100, to = 1, orient = 'horizontal', command = lambda x: self.scale(self.scaleBar.get()*0.01), length = 100)
         self.scaleBar.set(100)
-        self.scaleBar.grid(row = 2, column = 1, sticky = 's')
+        self.scaleBar.grid(row = 1, column = 1, sticky = 's')
   
     def scale(self, scaleAmount):
         self.drawPicks()
@@ -70,7 +70,7 @@ class mainMenu:
 def main():    
     root = tk.Tk(className = 'ToothPicks')
     root.title('ToothPicks')
-    #root.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='i.png'))
+    root.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='logo.png'))
     root.resizable(False, False)
     app = mainMenu(root)
     root.mainloop()
