@@ -13,6 +13,8 @@ Run: `python3 main.py`
 
 #### Other Requirements
 
+Python version: `3.7`
+
 Make sure you have tkinter installed: `sudo apt-get install python3-tk`
 
 If you get an import error for ImageTk, try: `sudo apt-get install python3-pil python3-pil.imagetk`
